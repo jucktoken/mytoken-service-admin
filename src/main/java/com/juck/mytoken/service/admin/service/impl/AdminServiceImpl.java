@@ -29,9 +29,9 @@ public class AdminServiceImpl implements AdminService {
         TbSysUser tbSysUser = tbSysUserMapper.selectOneByExample(example);
 
         plantPassword=DigestUtils.md5DigestAsHex(plantPassword.getBytes());
-        String password=DigestUtils.md5DigestAsHex(tbSysUser.getPassword().getBytes());
+        String password=tbSysUser.getPassword();
         if(plantPassword.equals(password)){
-
+            tbSysUser.setUserName("张建");
             return  tbSysUser;
         }
         return null;
