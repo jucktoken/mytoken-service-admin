@@ -4,4 +4,4 @@ spring:
       uri: http://192.168.110.138:8888
       name: mytoken-service-admin
       label: master
-      profile: dev
+      profile: prod
