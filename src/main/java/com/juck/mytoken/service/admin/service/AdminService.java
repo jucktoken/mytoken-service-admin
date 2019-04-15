@@ -1,6 +1,6 @@
 package com.juck.mytoken.service.admin.service;
 
-import com.juck.mytoken.service.admin.domain.TbSysUser;
+import com.juck.mytoken.common.domain.TbSysUser;
 
 public interface AdminService {
     /**

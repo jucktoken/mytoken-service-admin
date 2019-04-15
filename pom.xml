@@ -23,12 +23,15 @@
             <groupId>com.juck</groupId>
             <artifactId>mytoken-common-service</artifactId>
             <version>${project.parent.version}</version>
+        </dependency> <dependency>
+            <groupId>com.juck</groupId>
+            <artifactId>mytoken-common-domain</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.juck</groupId>
             <artifactId>mytoken-common</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <!-- Database End -->

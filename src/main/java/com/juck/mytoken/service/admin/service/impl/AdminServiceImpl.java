@@ -1,6 +1,6 @@
 package com.juck.mytoken.service.admin.service.impl;
 
-import com.juck.mytoken.service.admin.domain.TbSysUser;
+import com.juck.mytoken.common.domain.TbSysUser;
 import com.juck.mytoken.service.admin.mapper.TbSysUserMapper;
 import com.juck.mytoken.service.admin.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;

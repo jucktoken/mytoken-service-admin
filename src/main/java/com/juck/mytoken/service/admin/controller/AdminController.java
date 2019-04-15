@@ -1,7 +1,7 @@
 package com.juck.mytoken.service.admin.controller;
 
 import com.juck.mytoken.common.dto.BaseResult;
-import com.juck.mytoken.service.admin.domain.TbSysUser;
+import com.juck.mytoken.common.domain.TbSysUser;
 import com.juck.mytoken.service.admin.service.AdminService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
