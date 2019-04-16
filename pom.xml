@@ -71,7 +71,6 @@
                     <mainClass>com.juck.mytoken.service.admin.ServiceAdminApplication</mainClass>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
