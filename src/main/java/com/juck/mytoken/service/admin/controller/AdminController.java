@@ -1,21 +1,37 @@
 package com.juck.mytoken.service.admin.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.juck.mytoken.common.domain.base.BaseDto;
 import com.juck.mytoken.common.dto.BaseResult;
 import com.juck.mytoken.common.domain.TbSysUser;
 import com.juck.mytoken.service.admin.service.AdminService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @RestController
+@RequestMapping("/v1/admins")
 public class AdminController {
     @Autowired
     private AdminService adminService;
+
+    @RequestMapping("/page/{pageNum}/{pageSize}")
+    public BaseResult page(
+            @PathVariable(required = true)int pageNum,
+            @PathVariable(required = true)int pageSize,
+            @PathVariable(required = false)TbSysUser tbSysUser){
+
+        PageInfo<TbSysUser> pageInfo = adminService.selectPage(pageNum, pageSize, tbSysUser);
+        List<TbSysUser> list = pageInfo.getList();
+        return BaseResult.ok(list);
+    }
 
     /**
      * 登录
@@ -25,7 +41,6 @@ public class AdminController {
      */
     @RequestMapping(value = "login",method = RequestMethod.GET)
     public BaseResult login(String loginCode, String password){
-
         //检查登录账户密码是否有效
         BaseResult baseResult = checkLoginCodeAndPassword(loginCode, password);
         if(baseResult!=null){
