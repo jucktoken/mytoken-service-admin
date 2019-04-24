@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      uri: http://192.168.110.138:8888
+      uri: http://localhost:8888
       name: mytoken-service-admin
       label: master
       profile: prod
