@@ -1,6 +1,8 @@
 package com.juck.mytoken.service.admin.service.impl;
 
+import com.juck.mytoken.common.domain.TbPostsPost;
 import com.juck.mytoken.common.domain.TbSysUser;
+import com.juck.mytoken.common.mapper.TbPostsPostMapper;
 import com.juck.mytoken.common.mapper.TbSysUserMapper;
 import com.juck.mytoken.common.service.impl.BaseServiceImpl;
 import com.juck.mytoken.service.admin.service.AdminService;
@@ -11,10 +13,19 @@ import tk.mybatis.mapper.entity.Example;
 
 @Service
 @Transactional(readOnly = true)
-public class AdminServiceImpl extends BaseServiceImpl<TbSysUser, TbSysUserMapper> implements AdminService {
+public class AdminServiceImpl extends BaseServiceImpl<TbPostsPost, TbPostsPostMapper> implements AdminService {
+    @Override
+    public void regist(TbSysUser tbSysUser) {
 
+    }
 
     @Override
+    public TbSysUser login(String loginCode, String plantPassword) {
+        return null;
+    }
+
+
+   /* @Override
     @Transactional(readOnly = false)
     public void regist(TbSysUser tbSysUser) {
         tbSysUser.setPassword(DigestUtils.md5DigestAsHex(tbSysUser.getPassword().getBytes()));
@@ -34,5 +45,5 @@ public class AdminServiceImpl extends BaseServiceImpl<TbSysUser, TbSysUserMapper
             return  tbSysUser;
         }
         return null;
-    }
+    }*/
 }
