@@ -1,10 +1,9 @@
 package com.juck.mytoken.service.admin.service;
 
-import com.juck.mytoken.common.domain.TbPostsPost;
 import com.juck.mytoken.common.domain.TbSysUser;
 import com.juck.mytoken.common.service.BaseService;
 
-public interface AdminService extends BaseService<TbPostsPost> {
+public interface AdminService extends BaseService<TbSysUser> {
     /**
      * 注册
      * @param tbSysUser

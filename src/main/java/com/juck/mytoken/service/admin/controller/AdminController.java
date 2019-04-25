@@ -1,7 +1,6 @@
 package com.juck.mytoken.service.admin.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.juck.mytoken.common.domain.TbPostsPost;
 import com.juck.mytoken.common.domain.base.BaseDto;
 import com.juck.mytoken.common.dto.BaseResult;
 import com.juck.mytoken.common.domain.TbSysUser;
@@ -27,10 +26,10 @@ public class AdminController {
     public BaseResult page(
             @PathVariable(required = true)int pageNum,
             @PathVariable(required = true)int pageSize,
-            @PathVariable(required = false)TbPostsPost tbSysUser){
+            @PathVariable(required = false)TbSysUser tbSysUser){
 
-        PageInfo<TbPostsPost> pageInfo = adminService.selectPage(pageNum, pageSize, tbSysUser);
-        List<TbPostsPost> list = pageInfo.getList();
+        PageInfo<TbSysUser> pageInfo = adminService.selectPage(pageNum, pageSize, tbSysUser);
+        List<TbSysUser> list = pageInfo.getList();
         return BaseResult.ok(list);
     }
 
